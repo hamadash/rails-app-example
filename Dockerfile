@@ -3,9 +3,9 @@
 # syntax=docker/dockerfile:1
 FROM ruby:3.1.3
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+WORKDIR /rails-app-example
+COPY Gemfile /rails-app-example/Gemfile
+COPY Gemfile.lock /rails-app-example/Gemfile.lock
 RUN bundle install
 
 # コンテナー起動時に毎回実行されるスクリプトを追加
