@@ -1,1 +1,6 @@
+h1 投稿編集画面
 
+div style="margin-bottom: 16px;"
+  span= link_to "詳細画面へ", post_path(@post)
+
+= render "form", post: @post

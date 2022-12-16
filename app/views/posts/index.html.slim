@@ -1,1 +1,15 @@
+h1 投稿一覧画面
 
+= link_to "新規投稿", new_post_path
+
+table
+  thead
+    th ID
+    th タイトル
+    th 更新日時
+  tbody
+    - @posts.each do |post|
+      tr
+        td= post.id
+        td= link_to post.title, post_path(post)
+        td= post.updated_at.strftime("%Y/%m/%d %H:%M:%S")

@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: "作成しました"
     else
       render :new
     end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: "更新しました"
     else
       render :edit
     end
@@ -33,9 +33,9 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      redirect_to posts_path
+      redirect_to posts_path, notice: "削除しました", status: :see_other
     else
-      render :index
+      render :show
     end
   end
 
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.permit(:id, :title, :body)
+    params.require(:post).permit(:id, :title, :body)
   end
 end
