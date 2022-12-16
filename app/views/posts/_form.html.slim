@@ -1,0 +1,13 @@
+= form_with model: post, local: true do |f|
+  div style="width: 500px;"
+    div
+      div= f.label :title
+      div= f.text_field :title, style: "width: 100%;"
+    div
+      div= f.label :body
+      div= f.text_area :body, rows: 5, style: "width: 100%;"
+    div
+      = f.submit "投稿"
+
+div style="margin-top: 16px;"
+  span= link_to "一覧画面へ", posts_path

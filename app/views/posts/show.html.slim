@@ -1,0 +1,17 @@
+h1 投稿詳細
+
+div style="margin-bottom: 16px;"
+  div style="margin-bottom: 8px;"
+    div Title
+    div= @post.title
+
+  div
+    div Body
+    div= @post.body
+
+div
+  span= link_to "編集", edit_post_path(@post), style: "margin-right: 8px;"
+  span= link_to "削除", post_path(@post), data: { turbo_method: :delete, turbo_confirm: "削除してもよろしいですか？" }
+
+div style="margin-top: 16px;"
+  span= link_to "一覧画面へ", posts_path
