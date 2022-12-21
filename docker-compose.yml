@@ -17,6 +17,7 @@ services:
     volumes:
       - .:/rails-app-example
       - bundle-data:/usr/local/bundle
+      - ../rails:/lib/rails
     ports:
       - "3000:3000"
     depends_on:
