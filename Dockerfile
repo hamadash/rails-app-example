@@ -1,7 +1,7 @@
 # ref. https://matsuand.github.io/docs.docker.jp.onthefly/samples/rails/
 
 # syntax=docker/dockerfile:1
-FROM ruby:3.1.3
+FROM ruby:3.3.0
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /rails-app-example
 COPY Gemfile /rails-app-example/Gemfile
